@@ -1,0 +1,12 @@
+node_modules
+*.log
+.DS_Store
+bundle.js
+test
+test.js
+demo
+example
+.npmignore
+webpack.config.js
+example.frag
+index.html

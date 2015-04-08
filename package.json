@@ -1,0 +1,29 @@
+{
+  "name": "glslify-loader",
+  "version": "1.0.0",
+  "description": "glslify loader module for webpack",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --colors",
+    "bundle": "webpack"
+  },
+  "author": {
+    "name": "Hugh Kennedy",
+    "email": "hughskennedy@gmail.com",
+    "url": "http://hughsk.io/"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stackgl/glslify-loader.git"
+  },
+  "keywords": [
+    "ecosystem:stackgl"
+  ],
+  "homepage": "https://github.com/stackgl/glslify-loader",
+  "bugs": {
+    "url": "https://github.com/stackgl/glslify-loader/issues"
+  }
+}
