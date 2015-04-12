@@ -1,6 +1,6 @@
 {
   "name": "glslify-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "glslify loader module for webpack",
   "main": "index.js",
   "license": "MIT",
