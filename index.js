@@ -14,9 +14,11 @@ function glslifyWebpackLoader(source) {
     inline: true,
     basedir: basedir
   }, function(err, src, files) {
-    files.forEach(function(file) {
-      self.addDependency(file)
-    })
+    if (files) {
+      files.forEach(function(file) {
+        self.addDependency(file)
+      })
+    }
 
     return self.callback(err, src)
   })
