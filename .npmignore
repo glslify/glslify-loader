@@ -10,3 +10,4 @@ example
 webpack.config.js
 example.frag
 index.html
+entry.js
