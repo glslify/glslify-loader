@@ -1,47 +1,73 @@
 # glslify-loader
 
-[![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
-
 [glslify](http://github.com/stackgl/glslify) loader module for [webpack](http://webpack.github.io/).
 
 ## Installation
+```sh
+npm install glslify-loader
+```
 
-Generally, you'll want to use this alongside webpack's
-`raw-loader` module:
-
-``` bash
-npm install --save glslify-loader raw-loader
+Generally, you'll want to use this alongside webpack's [raw-loader](https://github.com/webpack-contrib/raw-loader) module:
+```sh
+npm install raw-loader
 ```
 
 ## Usage
 
-[![NPM](https://nodei.co/npm/glslify-loader.png)](https://nodei.co/npm/glslify-loader/)
+[Documentation: Using Loaders in Webpack](https://webpack.js.org/concepts/loaders/#configuration)
 
-[Documentation: Using Loaders](http://webpack.github.io/docs/using-loaders.html)
+##### Configuration file
 
-Once installed, you should be able to require your shaders
-like so to have them bundled at build time:
-
-``` javascript
-var source = require('glslify!raw!./my-shader.glsl')
-```
-
-### Configuration
-
-Alternatively, you may apply these loaders automatically
-to all `.glsl`, `.frag` and `.vert` files by adding some
-additional configuration:
-
-``` javascript
+```js
 module.exports = {
-  module: {
-    loaders: [
-      { test: /\.(glsl|frag|vert)$/, loader: 'raw', exclude: /node_modules/ },
-      { test: /\.(glsl|frag|vert)$/, loader: 'glslify', exclude: /node_modules/ }
-    ]
-  }
+  rules: [
+    {
+      test: /\.(glsl|vs|fs|vert|frag)$/,
+      exclude: /node_modules/,
+      use: [
+        'raw-loader',
+        'glslify-loader'
+      ]
+    }
+  ]
 }
 ```
+
+##### Inline
+
+```js
+// Using require
+const source = require('raw-loader!glslify-loader!./my-shader.glsl')
+
+// Using ES6 import statement
+import source from 'raw-loader!glslify-loader!./my-shader.glsl'
+```
+
+##### Speficy source transforms
+See [Glslify Source Transforms](https://github.com/glslify/glslify#source-transforms) for details.
+
+```js
+module.exports = {
+  rules: [
+    {
+      test: /\.(glsl|frag|vert)$/,
+      exclude: /node_modules/,
+      use: [
+        'raw-loader',
+        {
+          loader: 'glslify-loader'
+          options: {
+            transform: [
+              ['glslify-hex', { 'option-1': true, 'option-2': 42 }]
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
 
 ## Contributing
 

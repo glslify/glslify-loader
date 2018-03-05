@@ -1,24 +1,36 @@
 {
   "name": "glslify-loader",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "glslify loader module for webpack",
-  "main": "index.js",
+  "main": "glslify-loader.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --colors",
-    "bundle": "webpack"
+    "test": "npm run tape --silent",
+    "tape": "tape test/index.js | tap-spec"
   },
   "author": {
     "name": "Hugh Kennedy",
     "email": "hughskennedy@gmail.com",
     "url": "http://hughsk.io/"
   },
+  "files": [],
   "dependencies": {
     "glslify-bundle": "^5.0.0",
     "glslify-deps": "^1.3.0",
+    "loader-utils": "^1.1.0",
     "resolve": "^1.3.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "glsl-noise": "^0.0.0",
+    "glslify-fancy-imports": "^1.0.1",
+    "glslify-hex": "^2.1.1",
+    "memory-fs": "^0.4.1",
+    "raw-loader": "^0.5.1",
+    "require-from-string": "^2.0.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.9.0",
+    "webpack": "^4.1.0"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/stackgl/glslify-loader.git"
@@ -29,5 +41,6 @@
   "homepage": "https://github.com/stackgl/glslify-loader",
   "bugs": {
     "url": "https://github.com/stackgl/glslify-loader/issues"
-  }
+  },
+  "engines" : { "node" : ">=6" }
 }
