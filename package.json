@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "test": "npm run tape --silent",
-    "tape": "tape test/index.js | tap-spec"
+    "tape": "tape test/index.js | tap-spec",
+    "example": "webpack-serve ./example/webpack.config.js"
   },
   "author": {
     "name": "Hugh Kennedy",
@@ -21,15 +22,18 @@
     "resolve": "^1.3.3"
   },
   "devDependencies": {
+    "glsl-aastep": "^1.0.1",
     "glsl-noise": "^0.0.0",
     "glslify-fancy-imports": "^1.0.1",
     "glslify-hex": "^2.1.1",
     "memory-fs": "^0.4.1",
     "raw-loader": "^0.5.1",
+    "regl": "^1.3.6",
     "require-from-string": "^2.0.1",
-    "tap-spec": "^4.1.1",
+    "tap-spec": "^5.0.0",
     "tape": "^4.9.0",
-    "webpack": "^4.1.0"
+    "webpack": "^4.1.0",
+    "webpack-serve": "^1.0.4"
   },
   "repository": {
     "type": "git",
@@ -42,5 +46,7 @@
   "bugs": {
     "url": "https://github.com/stackgl/glslify-loader/issues"
   },
-  "engines" : { "node" : ">=6" }
+  "engines": {
+    "node": ">=6"
+  }
 }
