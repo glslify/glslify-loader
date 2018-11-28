@@ -1,4 +1,24 @@
+# Editors
+.idea
+.vscode
+
+# Node / Yarn / Npm
 node_modules
+npm-debug.log*
+yarn.lock
+package-lock.json
+
+# Logs and Temporary files
+.tmp
+logs
 *.log
+
+# MacOS
 .DS_Store
-bundle.js
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Misc
+coverage
